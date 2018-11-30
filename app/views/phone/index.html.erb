@@ -1,0 +1,22 @@
+
+<%= form_with url: '/phone/save' do |form| %>
+  <p>
+    <%= form.label "Enter Name" %><br>
+    <%= form.text_field "name" %>
+  </p>
+ 
+  <p>
+    <%= form.label "Phone Number" %><br>
+    <%= form.text_field "phone" %>
+  </p>
+   
+  <% if cookies['captcha'] == '0' %> 
+    <p>
+      <%= form.submit "Submit" %>
+    </p>
+  <% else %>
+    <p>
+      <%= invisible_recaptcha_tags text: 'Submit form' %>
+    </p>
+  <% end %>
+<% end %>

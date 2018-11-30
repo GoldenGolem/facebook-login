@@ -1,0 +1,5 @@
+<h1>Share With</h1>
+
+<%= social_share_button_tag("hello", :allow_sites => %w(twitter facebook)) %>
+
+<%= link_to "Logout", destroy_user_session_path, method: :delete %>

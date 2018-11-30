@@ -1,0 +1,12 @@
+<span> Register With </span> <br>
+<% unless current_user %> 
+  <%= link_to "FACEBOOK", user_facebook_omniauth_authorize_path, :class => "popup", :"data-width" => 600, :"data-height" => 400%>
+  <%= link_to "PHONE", phone_index_path%>
+<% else %>
+  <%= current_user[:name] %>
+  <%= current_user[:email] %>
+  <%= current_user[:image] %>
+  <%= current_user[:location] %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
+	

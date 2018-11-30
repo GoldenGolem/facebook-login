@@ -1,0 +1,22 @@
+<table border="1">
+  <tr>
+    <th>affilate</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <% if user.phone_num != "" %>
+        <td></td>
+        <td><%= user.phone_num %></td>
+      <% else %>
+        <td><%= user.email %></td>
+        <td></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
